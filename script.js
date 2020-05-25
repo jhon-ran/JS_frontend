@@ -97,13 +97,21 @@ for (let a = 0; a < card.length; a++) {
 //Fonctionnalité 7
 //Double click otherwise it doesn't work well
 
-let cardRow = document.querySelectorAll("div.row")[1]	
-let forwardButton = document.querySelectorAll(".my-2")[1]
+let cardRow = document.querySelectorAll("div.row")[1];
+let forwardButton = document.querySelectorAll(".my-2")[1];
 
 let FowardButtonClick = function() {
-  cardRow.insertBefore(cardRow.lastChild, cardRow.firstChild)
+  cardRow.insertBefore(cardRow.lastChild, cardRow.firstChild);
 }
 
 forwardButton.addEventListener('click', FowardButtonClick);
 
+//Fonctionnalité 8
+let backwardButton = document.querySelectorAll(".my-2")[0];
 
+let BackwardButtonClick = function(e) {
+  e.preventDefault();
+  cardRow.insertBefore(cardRow.firstChild, cardRow.lastChild)
+}
+
+backwardButton.addEventListener('click', BackwardButtonClick);
