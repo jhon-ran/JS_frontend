@@ -71,3 +71,26 @@ var removeBootstrap = function () {
 };
 
 header.addEventListener('dblclick', removeBootstrap);
+
+//Fonctionnalité 6
+let btnView = document.querySelectorAll('.btn-group');
+let card = document.querySelectorAll(".card");
+
+for (let a = 0; a < card.length; a++) {
+  
+  let mouseMove = function() {	
+	  let imgCard = card[a].querySelector('.card-img-top')
+	  let textCard = card[a].querySelector('.card-text')
+	    
+	    if (textCard.style.display === "none") {
+        textCard.style.display = "block";
+        imgCard.style.width = "100%";
+      } 
+      else {
+        textCard.style.display = "none";
+        imgCard.style.width = "20%";
+      }
+  } 
+  btnView[a].children[0].addEventListener('mouseover', mouseMove)
+}
+
