@@ -94,3 +94,16 @@ for (let a = 0; a < card.length; a++) {
   btnView[a].children[0].addEventListener('mouseover', mouseMove)
 }
 
+//Fonctionnalité 7
+//Double click otherwise it doesn't work well
+
+let cardRow = document.querySelectorAll("div.row")[1]	
+let forwardButton = document.querySelectorAll(".my-2")[1]
+
+let FowardButtonClick = function() {
+  cardRow.insertBefore(cardRow.lastChild, cardRow.firstChild)
+}
+
+forwardButton.addEventListener('click', FowardButtonClick);
+
+
